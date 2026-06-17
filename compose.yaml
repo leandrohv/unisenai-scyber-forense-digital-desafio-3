@@ -1,0 +1,13 @@
+services:
+  stego-lab:
+    build: .
+    image: fd-stego-lab-aluno-clean:latest
+    container_name: fd_stego_lab_aluno_clean
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./evidence:/evidence:ro
+      - ./work:/work
+      - ./reports:/reports
+    working_dir: /work
+    command: bash
